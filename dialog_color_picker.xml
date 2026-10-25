@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="16dp">
+
+    <View android:id="@+id/sw_preview"
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:background="@drawable/xz_card" />
+
+    <TextView style="@style/XuanZhi.Caption"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" android:text="R" />
+    <SeekBar android:id="@+id/sb_r" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:max="255" android:progress="255" />
+
+    <TextView style="@style/XuanZhi.Caption"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" android:text="G" />
+    <SeekBar android:id="@+id/sb_g" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:max="255" android:progress="240" />
+
+    <TextView style="@style/XuanZhi.Caption"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" android:text="B" />
+    <SeekBar android:id="@+id/sb_b" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:max="255" android:progress="230" />
+</LinearLayout>

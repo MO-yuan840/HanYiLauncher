@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LatticeFrame">
+        <attr name="lattice_inset" format="dimension" />
+        <attr name="lattice_thickness" format="dimension" />
+        <attr name="lattice_corner" format="dimension" />
+        <attr name="lattice_color" format="color" />
+    </declare-styleable>
+</resources>

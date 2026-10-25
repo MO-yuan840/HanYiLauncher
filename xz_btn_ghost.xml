@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 幽灵按钮：只有一道金线，留白里最不抢眼 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#1AA8874A">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" />
+            <corners android:radius="2dp" />
+            <stroke android:width="0.8dp" android:color="@color/xz_gilt_soft" />
+        </shape>
+    </item>
+</ripple>

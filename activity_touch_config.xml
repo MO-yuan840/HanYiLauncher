@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.hanyi.launcher.ui.window.LatticeFrame
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:lattice_inset="12dp"
+    app:lattice_color="@color/xz_gilt_soft"
+    app:lattice_thickness="0.6dp">
+
+    <net.hanyi.launcher.ui.window.XuanZhiBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 顶栏 -->
+            <TextView style="@style/XuanZhi.Title"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/touch_config" />
+
+            <TextView style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/touch_config_sub" />
+
+            <!-- ① 外设状态卡：插上键鼠这里会变绿，下面整块灰显 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/XuanZhi.Card">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="14dp">
+
+                    <TextView android:id="@+id/tv_ext_state"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:textSize="14sp" android:textStyle="bold" />
+
+                    <TextView android:id="@+id/tv_ext_hint"
+                        style="@style/XuanZhi.Caption"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/touch_ext_hint"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ② 鼠标预设：ZL2 移动 / FCL 点击 -->
+            <TextView style="@style/XuanZhi.Section"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/touch_preset" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                style="@style/XuanZhi.Card">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="10dp">
+
+                    <RadioGroup android:id="@+id/rg_preset"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton android:id="@+id/rb_zl2"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/xz_vermilion"
+                            android:text="@string/touch_zl2" />
+
+                        <RadioButton android:id="@+id/rb_fcl"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:buttonTint="@color/xz_vermilion"
+                            android:text="@string/touch_fcl" />
+                    </RadioGroup>
+
+                    <TextView android:id="@+id/tv_preset_desc"
+                        style="@style/XuanZhi.Caption"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ③ 无障碍权限 + 强制关闭 -->
+            <TextView style="@style/XuanZhi.Section"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/touch_permission" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_grant_a11y"
+                style="@style/Widget.XuanZhi.Button.Outlined"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="@string/touch_grant_a11y"
+                android:textColor="@color/xz_gilt" />
+
+            <CheckBox android:id="@+id/cb_force_off"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/touch_force_off"
+                android:textColor="@color/xz_ink_soft" />
+
+            <!-- ④ 实时预览：一小块画当前皮肤 -->
+            <TextView style="@style/XuanZhi.Section"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/touch_preview" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="180dp"
+                style="@style/XuanZhi.Card"
+                android:alpha="0.96">
+
+                <FrameLayout android:id="@+id/preview_host"
+                    android:layout_width="match_parent" android:layout_height="match_parent" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ⑤ 皮肤列表 -->
+            <TextView style="@style/XuanZhi.Section"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/touch_schemes" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_schemes"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:weightSum="3"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_edit_current"
+                    style="@style/Widget.XuanZhi.Button.Outlined"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginEnd="6dp"
+                    android:text="@string/touch_edit_current"
+                    android:textColor="@color/xz_gilt" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import"
+                    style="@style/Widget.XuanZhi.Button.Outlined"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="3dp" android:layout_marginEnd="3dp"
+                    android:text="@string/touch_import"
+                    android:textColor="@color/xz_gilt" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_import_dir"
+                    style="@style/Widget.XuanZhi.Button.Outlined"
+                    android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:layout_marginStart="6dp"
+                    android:text="@string/touch_import_dir"
+                    android:textColor="@color/xz_gilt" />
+            </LinearLayout>
+
+            <TextView style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/touch_import_hint" />
+        </LinearLayout>
+    </ScrollView>
+</net.hanyi.launcher.ui.window.LatticeFrame>

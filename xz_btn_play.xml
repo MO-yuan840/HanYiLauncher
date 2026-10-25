@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 「启动」：唯一一块印泥红，圆角只取 2dp，方正有骨 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#33A8362C">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/xz_vermilion" />
+            <corners android:radius="2dp" />
+            <stroke android:width="0.8dp" android:color="#CCE8DFC9" />
+        </shape>
+    </item>
+</ripple>

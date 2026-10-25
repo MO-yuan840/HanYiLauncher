@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:background="#0A0A0A"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/action_bar" android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:title="@string/title_console" app:titleTextColor="#FFFFFF" />
+
+    <ScrollView android:id="@+id/scroll" android:fillViewport="true"
+        android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp">
+        <TextView android:id="@+id/tv_log"
+            android:fontFamily="monospace" android:textSize="11sp" android:textColor="#B0E89B"
+            android:padding="10dp" android:text="（日志会在这里实时滚动）\n"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_clear" android:text="清空日志"
+        android:layout_margin="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

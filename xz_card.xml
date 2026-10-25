@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/xz_surface" />
+            <corners android:radius="3dp" />
+        </shape>
+    </item>
+    <!-- 描金边：比阴影更符合「窗棂」意象 -->
+    <item android:left="-0.6dp" android:top="-0.6dp"
+          android:right="-0.6dp" android:bottom="-0.6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#00000000" />
+            <corners android:radius="3dp" />
+            <stroke android:width="0.6dp" android:color="@color/xz_surface_rim" />
+        </shape>
+    </item>
+</layer-list>

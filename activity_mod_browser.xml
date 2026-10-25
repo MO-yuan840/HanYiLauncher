@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.hanyi.launcher.ui.window.LatticeFrame
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:lattice_inset="12dp"
+    app:lattice_color="@color/xz_gilt_soft"
+    app:lattice_thickness="0.6dp">
+
+    <net.hanyi.launcher.ui.window.XuanZhiBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 顶栏：返回（小篆「返」）+ 标题 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView android:id="@+id/btn_back"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:gravity="center"
+                android:text="返"
+                android:textColor="@color/xz_gilt"
+                android:textSize="16sp"
+                android:background="@drawable/xz_btn_ghost" />
+
+            <TextView
+                style="@style/XuanZhi.Title"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="14dp"
+                android:textSize="20sp"
+                android:text="@string/mods" />
+
+            <!-- 源徽标：让玩家知道「两个站都在查」，消除搜不到的疑虑 -->
+            <TextView android:id="@+id/tv_source_badge"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/xz_btn_ghost"
+                android:paddingStart="8dp" android:paddingEnd="8dp"
+                android:paddingTop="3dp" android:paddingBottom="3dp"
+                android:text="墨 + 咒" />
+        </LinearLayout>
+
+        <!-- 搜索框：无边框，只有底线，像落笔一道 -->
+        <EditText android:id="@+id/et_query"
+            android:layout_width="match_parent" android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:hint="@string/search_mod_hint"
+            android:textColorHint="@color/xz_ink_soft"
+            android:textColor="@color/xz_ink"
+            android:textSize="15sp"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+        <View android:layout_width="match_parent" android:layout_height="0.8dp"
+            android:background="@color/xz_gilt_soft" />
+
+        <!-- 筛选：版本 + 加载器，芯片式，选中描金 -->
+        <LinearLayout android:id="@+id/filter_row"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView android:id="@+id/filter_mc"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content" android:layout_height="28dp"
+                android:gravity="center"
+                android:paddingStart="10dp" android:paddingEnd="10dp"
+                android:background="@drawable/xz_btn_ghost"
+                android:text="@string/all_versions" />
+
+            <TextView android:id="@+id/filter_loader"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content" android:layout_height="28dp"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:paddingStart="10dp" android:paddingEnd="10dp"
+                android:background="@drawable/xz_btn_ghost"
+                android:text="@string/all_loaders" />
+        </LinearLayout>
+
+        <!-- 结果列表：卡片之间留白大于卡片本身，简 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_mods"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="12dp"
+            android:scrollbars="vertical"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp" />
+
+        <!-- 空态：不是转圈，是一句淡墨提示，不制造焦虑 -->
+        <TextView android:id="@+id/tv_empty"
+            style="@style/XuanZhi.Caption"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="@string/mod_empty" />
+    </LinearLayout>
+</net.hanyi.launcher.ui.window.LatticeFrame>

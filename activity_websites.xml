@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.hanyi.launcher.ui.window.LatticeFrame
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    app:lattice_inset="12dp" app:lattice_color="@color/xz_gilt_soft" app:lattice_thickness="0.6dp">
+    <net.hanyi.launcher.ui.window.XuanZhiBackground android:layout_width="match_parent" android:layout_height="match_parent"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:padding="16dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView style="@style/XuanZhi.Title" android:textSize="20sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/websites_entry"/>
+            <TextView style="@style/XuanZhi.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3dp" android:text="@string/websites_sub"/>
+            <EditText android:id="@+id/et_site_query" android:layout_width="match_parent" android:layout_height="44dp" android:layout_marginTop="14dp" android:background="@null" android:hint="@string/websites_search_hint" android:textColorHint="@color/xz_ink_soft" android:drawableStart="@drawable/xz_btn_ghost"/>
+            <TextView style="@style/XuanZhi.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/websites_section"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/list_sites" android:layout_width="match_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false"/>
+            <TextView style="@style/XuanZhi.Section" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="@string/seeds_section"/>
+            <TextView style="@style/XuanZhi.Caption" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/seeds_hint"/>
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/list_seeds" android:layout_width="match_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false" android:layout_marginTop="4dp"/>
+        </LinearLayout>
+    </ScrollView>
+</net.hanyi.launcher.ui.window.LatticeFrame>

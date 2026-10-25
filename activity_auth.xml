@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView android:text="@string/title_auth"
+        android:textColor="#FFFFFF" android:textSize="20sp" android:textStyle="bold"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/mode_offline" android:text="@string/btn_login_offline"
+        android:checked="true" android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/mode_ms" android:text="@string/btn_login_ms"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+    <RadioGroup android:id="@+id/mode_group" android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/_off" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/_ms" android:visibility="gone" android:layout_width="0dp" android:layout_height="0dp" />
+    </RadioGroup>
+
+    <!-- 离线模式 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/offline_input"
+        android:hint="@string/hint_offline_name" android:textColorHint="#9E9E9E"
+        android:layout_marginTop="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_offline_name" android:textColor="#FFFFFF"
+            android:maxLines="1" android:inputType="textNoSuggestions"
+            android:layout_width="match_parent" android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_offline_confirm" android:text="进入离线模式"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <!-- 微软登录：WebView 占满剩余空间 -->
+    <WebView android:id="@+id/web"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1" android:layout_width="match_parent" android:layout_height="0dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_ms_login" android:text="用微软账号登录"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+</LinearLayout>

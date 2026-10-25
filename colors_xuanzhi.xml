@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xz_paper">#14100C</color>
+    <color name="xz_paper_dark">#0E0B08</color>
+    <color name="xz_ink">#E8DFC9</color>
+    <color name="xz_ink_soft">#B6A893</color>
+    <color name="xz_vermilion">#C44A3C</color>
+    <color name="xz_vermilion_press">#9C362A</color>
+    <color name="xz_gilt">#A8874A</color>
+    <color name="xz_gilt_soft">#8A7348</color>
+    <color name="xz_celadon">#5F8572</color>
+    <color name="xz_surface">#1C1711</color>
+    <color name="xz_surface_rim">#2A2218</color>
+</resources>

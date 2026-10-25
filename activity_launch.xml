@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.hanyi.launcher.ui.window.LatticeFrame
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:lattice_inset="16dp"
+    app:lattice_color="@color/xz_gilt"
+    app:lattice_thickness="0.8dp">
+
+    <!-- 宣纸底：放最下层，隔窗画在上面，中间全是留白 -->
+    <net.hanyi.launcher.ui.window.XuanZhiBackground
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="22dp">
+
+        <!-- 顶部：一栏疏朗，像卷首题字 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/XuanZhi.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name" />
+
+            <TextView
+                style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/xz_subtitle" />
+        </LinearLayout>
+
+        <!-- 账户 · 右上角，小如一枚闲章 -->
+        <TextView
+            android:id="@+id/btn_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:background="@drawable/xz_btn_ghost"
+            android:paddingStart="14dp" android:paddingEnd="14dp"
+            android:paddingTop="6dp" android:paddingBottom="6dp"
+            android:text="@string/account_offline"
+            android:textColor="@color/xz_gilt"
+            android:textSize="12sp"
+            android:letterSpacing="0.08" />
+
+        <!-- 中央：只有版本号 + 一行状态，大片留白 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:letterSpacing="0.1"
+                android:textColor="@color/xz_ink" />
+
+            <TextView
+                android:id="@+id/tv_profile_state"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <!-- 进度：墨痕式，默认藏起来，有活干才滑下来 -->
+            <FrameLayout
+                android:id="@+id/progress_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/progress_track"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#1AE8DFC9" />
+
+                <View
+                    android:id="@+id/progress_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="3dp"
+                    android:background="@color/xz_vermilion" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- 底部：工具入口一排，幽灵线框，不抢「启动」 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView android:id="@+id/btn_versions"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:text="@string/versions" />
+
+            <TextView android:id="@+id/btn_mods"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:text="@string/mods" />
+
+            <TextView android:id="@+id/btn_controls"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:text="@string/controls" />
+
+            <TextView android:id="@+id/btn_settings"
+                style="@style/XuanZhi.Caption"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:gravity="center"
+                android:paddingTop="12dp" android:paddingBottom="12dp"
+                android:text="@string/settings" />
+        </LinearLayout>
+
+        <!-- 「启动」：全宽、印泥红、方正 —— 整个界面只此一处高饱和 -->
+        <Button
+            android:id="@+id/btn_play"
+            style="@style/XuanZhi.Button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="56dp"
+            android:background="@drawable/xz_btn_play"
+            android:text="@string/play"
+            android:textAllCaps="false" />
+    </FrameLayout>
+</net.hanyi.launcher.ui.window.LatticeFrame>

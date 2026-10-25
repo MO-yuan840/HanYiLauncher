@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="max_mem" android:title="@string/pref_mem_max"
+        android:defaultValue="" android:inputType="number"
+        android:summary="自动（按设备内存算）" />
+
+    <EditTextPreference
+        android:key="jvm_args" android:title="@string/pref_jvm_args"
+        android:defaultValue="-XX:+UseG1GC -XX:MaxGCPauseMillis=50"
+        android:singleLine="false" android:lines="3"
+        android:summary="@string/pref_jvm_args_sum" />
+
+    <ListPreference
+        android:key="renderer" android:title="@string/pref_renderer"
+        android:defaultValue="HOLY_GL4ES" />
+
+    <!-- 点开即重新探测 MobileGlues；找不到会提示安装插件 -->
+
+    <EditTextPreference
+        android:key="game_dir" android:title="@string/pref_game_dir"
+        android:defaultValue="" android:singleLine="true"
+        android:summary="留空 = 内部存储/XuanZhi/instances/<版本>" />
+
+    <EditTextPreference
+        android:key="game_args" android:title="额外游戏参数（高级）"
+        android:defaultValue="" android:singleLine="false" android:lines="2"
+        android:summary="如 --quickPlayMultiplayer 地址:端口" />
+</PreferenceScreen>

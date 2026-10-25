@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/XuanZhi.Card"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:layout_margin="5dp" app:cardCornerRadius="12dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="12dp">
+
+        <View android:id="@+id/iv_mgmt_badge"
+            android:layout_width="38dp" android:layout_height="38dp"
+            android:background="@drawable/xz_card" />
+
+        <TextView android:id="@+id/tv_mgmt_title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp" android:textSize="13sp"
+            android:textStyle="bold" android:textColor="@color/xz_ink"
+            android:maxLines="2" android:ellipsize="end" />
+
+        <TextView android:id="@+id/tv_mgmt_name"
+            style="@style/XuanZhi.Caption"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="10sp" android:maxLines="1" />
+
+        <TextView android:id="@+id/tv_mgmt_meta"
+            style="@style/XuanZhi.Caption"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="10sp" android:layout_marginTop="2dp" />
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginTop="8dp" android:weightSum="3">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mgmt_toggle"
+                style="@style/Widget.XuanZhi.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="30dp"
+                android:layout_weight="1" android:textSize="10sp"
+                android:layout_marginEnd="3dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mgmt_folder"
+                style="@style/Widget.XuanZhi.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="30dp"
+                android:layout_weight="1" android:textSize="10sp"
+                android:text="@string/mgmt_open_folder" android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_mgmt_del"
+                style="@style/Widget.XuanZhi.Button.Outlined"
+                android:layout_width="0dp" android:layout_height="30dp"
+                android:layout_weight="1" android:textSize="10sp"
+                android:text="@string/mgmt_delete" android:layout_marginStart="3dp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">宣纸 · XuanZhi</string>
+    <string name="xz_subtitle">掌中一方宣，可载万千世界</string>
+
+    <string name="play">启 程</string>
+    <string name="versions">版本</string>
+    <string name="mods">模组</string>
+    <string name="controls">触控</string>
+    <string name="settings">设 置</string>
+    <string name="account_offline">未 署 名</string>
+
+    <string name="search_mod_hint">搜模组…如「 sodium 」「 暮色森林 」</string>
+    <string name="mod_empty">墨海无边，暂无所获。换个字试试？</string>
+    <string name="all_versions">全部版本</string>
+    <string name="all_loaders">全部加载器</string>
+    <string name="mod_installing">正在铺陈前置…</string>
+    <string name="mod_deps_ok">前置已齐，落笔安装</string>
+    <string name="mod_deps_missing">尚有 %d 个前置未取，正为你补齐</string>
+    <string name="touch_overlay_desc">宣纸启动器需在游戏中叠一层极淡的触控窗（默认仅一条边），可随时在「触控」里关闭。</string>
+
+    <!-- 加载器 -->
+    <string name="loader_fabric">Fabric（轻，手机首选）</string>
+    <string name="loader_quilt">Quilt</string>
+    <string name="loader_forge">Forge</string>
+    <string name="loader_neoforge">NeoForge</string>
+    <string name="loader_installing">正在研磨加载器…</string>
+    <string name="loader_ready">加载器已就位，可添模组</string>
+
+    <!-- Java 自动装 -->
+    <string name="jre_preparing">初次启程，先为你铺好 Java 运行境…</string>
+    <string name="jre_ready">Java 已就位</string>
+
+    <!-- 触控 -->
+    <string name="touch_hint">从屏幕左缘向右轻滑，唤出触控。闲置三息自隐。</string>
+    <string name="touch_enabled">触控：开（极隐模式）</string>
+    <string name="touch_disabled">触控：关</string>
+
+    <!-- 背景 -->
+    <string name="bg_paper">宣纸（默认）</string>
+    <string name="bg_custom">自选画卷…</string>
+</resources>
